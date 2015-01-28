@@ -1,5 +1,7 @@
 import random
 
+diceroll = raw_input("How many times do you want to roll the dice? ")
+diceroll = int(diceroll)
 count = 0
 one = 0.0
 two = 0.0
@@ -23,7 +25,7 @@ while True:
         five += 1
     if number == 6:
         six += 1
-    if count == 80:
+    if count == diceroll:
         break
 
 statsone = (one/count)*100
@@ -33,8 +35,7 @@ statsfour = (four/count)*100
 statsfive = (five/count)*100
 statssix = (six/count)*100
 
-
-print "The results"
+print "Out of %d rolls, your results are: " % diceroll
 print "______________________"
 print "One: %.2f%%, Count: %d" % (statsone, one)
 print "Two: %.2f%%, Count: %d" % (statstwo, two)
